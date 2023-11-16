@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+	<div style="background-color: darkorange;padding-top: 0.05%; padding-bottom: 0.05%; border: solid 1.5px black;">
+		<div class="plate">
+			<p class="script"><span>Program</span></p>
+			<p class="shadow text1">PRACTICE</p>
+			<p class="shadow text2">Java</p>
+			<p class="shadow text3">quest</p>
+			<p class="script"><span>with Array</span></p>
+		</div>
+	</div>
+	<div class="mondai">
+		<p>問題1-1 空白に当てはまる選択肢を選んでください。</p>
+		<p>プログラムの実行はできないけど、書き込めるよ。</p>
+	</div>
+
+	<div>
+		<pre style="margin-top: 0px;" class="edit-back-ground resi"><code class="prettyprint fon linenums lang-java">package array;
+
+public class Arraym1 {
+
+	public static void main(String[] args) {
+		
+		//要素数が5個(0~4)の配列を整数型と文字列型で宣言して  
+		
+		/*ここに選択肢のコードが入るよ*/
+		
+	}
+
+}</code></pre>
+	</div>
+	<p>選択肢:a</p>
+	<div class="fle">
+		<pre style="margin-top: 0px; border: solid 2px skyblue;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//整数型
+		int[] intArray = new int[5]; 
+		
+		//文字列型
+		String[] stringArray = new String[5]; 
+		</code></pre>
+	</div>
+	<p>選択肢:b</p>
+	<div>
+		<pre style="margin-top: 0px; border: solid 2px greenyellow;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//整数型
+		int[] intArray = new int[4]; 
+		
+		//文字列型
+		String[] stringArray = new String[4]; 
+		</code></pre>
+	</div>
+	<p>選択肢:c</p>
+	<div>
+		<pre style="margin-top: 0px; border: solid 2px orangered;" class="resi"><code class="prettyprint fon linenums lang-java">
+		//整数型
+		int  intArray = new int[5];  
+		
+		//文字列型
+		String  stringArray = new String[5];  
+		</code></pre>
+	</div>
+
+
+	<div>
+		<form>
+			<div class="pulldownset">
+				<select id="cate" class="subbox">
+					<option value="">解答を選択</option>
+					<option value="ha">a</option>
+					<option value="ne">b</option>
+					<option value="ne">c</option>
+				</select>
+
+				<select id="ha" class="subbox2">
+					<option value="">正誤を確認</option>
+					<option value="ha1">正解</option>
+				</select>
+
+				<select id="ne" class="subbox2">
+					<option value="">正誤を確認</option>
+					<option value="ha2">不正解</option>
+				</select>
+
+
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+			</div>
+			<br>
+
+
+
+		</form>
+	</div>
+	<div>
+		<button>
+			<div class="A">ボタン</div>
+		</button>
+		<div class="B">これが表示/非表示</div>
+
+		<div class="top_wrap">
+			<button><a href="idousaki/m1.html">次の問題に移動する</a></button>
+		</div>
+
+
+		<script type="text/javascript">
+
+
+			// 2. 表示/非表示を一気に更新する（表示条件は、引数と一致する id のサブBOX）
+			var dispSubBox = function (subId) {
+				[...document.querySelectorAll(".subbox2")].forEach(function (elm) {
+					elm.style.display = elm.id === subId ? "inline" : "none"
+				});
+			}
+			dispSubBox(); // 一致する id がないので全て 非表示になる。
+
+			// 1. select.subbox の操作で値が変わると発火するイベント
+			document.getElementById("cate").addEventListener("change", function (event) {
+				var elm = event.target; // select#id になる。
+				dispSubBox(elm.value); // 全更新：一致idだけ表示
+			});
+
+			function contentEditable() {
+				const code = $('.prettyprint');
+				code.attr({
+					contenteditable: true,
+					spellcheck: false,
+				});
+
+				$(function () {
+					$(".A").click(function () {
+						$(".B").toggleClass("C");
+					});
+				});
+			}
+
+			window.onload = () => contentEditable();
+
+
+		</script>
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+</body>
+
+</html>
